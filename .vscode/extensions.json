@@ -13,10 +13,10 @@
     // ============================================================
     // === JUPYTER NOTEBOOKS ===
     // ============================================================
-    "ms-toolsai.jupyter", // Core Jupyter support for .ipynb files
-    "ms-toolsai.jupyter-keymap", // Jupyter keyboard shortcuts in VS Code
-    "ms-toolsai.jupyter-renderers", // Rich output rendering (plots, dataframes)
-    "ms-toolsai.vscode-jupyter-cell-tags", // Cell tagging for notebook organization
+    // "ms-toolsai.jupyter", // Core Jupyter support for .ipynb files
+    // "ms-toolsai.jupyter-keymap", // Jupyter keyboard shortcuts in VS Code
+    // "ms-toolsai.jupyter-renderers", // Rich output rendering (plots, dataframes)
+    // "ms-toolsai.vscode-jupyter-cell-tags", // Cell tagging for notebook organization
     // ============================================================
     // === FILE PATH ASSISTANCE ===
     // ============================================================

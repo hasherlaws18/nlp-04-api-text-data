@@ -1,55 +1,53 @@
-# nlp-01-getting-started
+# nlp-04-api-text-data
 
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
-> Professional Python project for Web Mining and Applied NLP.
+> > Structured EVTL pipeline for reliable ingestion and transformation of JSON data from web APIs.
 
-Web Mining and Applied NLP focus on retrieving, processing, and analyzing text from the web and other digital sources.
-This course builds those capabilities through working projects.
+Web Mining and Applied NLP require reliable acquisition and processing of structured and semi-structured text data.
+This project implements a reproducible pipeline for working with JSON data from web APIs.
 
-In the age of generative AI, durable skills are grounded in real work:
-setting up a professional environment,
-reading and running code,
-understanding the logic,
-and pushing work to a shared repository.
-Each project follows a similar structure based on professional Python projects.
-These projects are **hands-on textbooks** for learning Web Mining and Applied NLP.
+The pipeline follows an EVTL architecture:
+
+- Extract data from an external API
+- Validate structure and content before use
+- Transform JSON into a structured representation
+- Load results into a persistent, analyzable format
+
+The emphasis is on correctness, inspectability, and repeatability:
+every stage has explicit inputs, outputs, and logging,
+and intermediate artifacts are preserved for verification.
 
 ## This Project
 
-This project focuses on retrieving and processing structured text data
-**from web APIs in JSON format**.
+This project demonstrates how to work with JSON data retrieved from web APIs using a structured EVTL pipeline.
 
-The goal is to acquire JSON data from an external source,
-inspect and validate its structure,
-transform it into a usable format,
-and load it into a reproducible output.
+The workflow:
 
-You've likely heard of ETL or ELT.
-We recommend EVTL.
+- Acquire JSON data from an external source
+- Inspect and validate its structure
+- Transform it into a tabular representation
+- Persist results for downstream analysis
 
-In EVTL, each stage has a source, a process, and a sink.
-
-- **Extract** acquires data
-- **Validate** inspects and checks it
-- **Transform** reshapes it
-- **Load** sends it to the chosen destination
-
-This project illustrates how to **work with real API data and understand its structure before analysis**.
+Each stage is implemented as a modular component with explicit inputs and outputs.
 
 ## Key Files
 
 You'll work with these files as you update authorship and experiment:
 
-- **src/nlp/pipeline_api_json.py** - MAIN PIPELINE SCRIPT (no changes needed)
-- **src/nlp/config_case.py** - Python configuration (<mark>**copy and edit**</mark> for your custom project)
-- **src/nlp/stage01_extract.py** - EXTRACT (no changes needed)
-- **src/nlp/stage02_validate_case.py** - VALIDATE (<mark>**copy and edit**</mark>)
-- **src/nlp/stage03_transform_case.py** - TRANSFORM (<mark>**copy and edit**</mark>)
-- **src/nlp/stage04_load.py** - LOAD (no changes needed)
-- **pyproject.toml** - <mark>**update**</mark> authorship, links, and dependencies
-- **zensical.toml** - <mark>**update**</mark> authorship and links
+## Key Files
+
+These files define the EVTL pipeline and the components you will update for your project.
+
+- **src/nlp/pipeline_api_json.py** - Main pipeline orchestrator (no changes required)
+- **src/nlp/config_case.py** - Configuration for API access and paths (<mark>**copy and edit**</mark> for your project)
+- **src/nlp/stage01_extract.py** - Extract stage: retrieves data from the API (no changes required)
+- **src/nlp/stage02_validate_case.py** - Validate stage: inspects and verifies JSON structure (<mark>**copy and edit**</mark>)
+- **src/nlp/stage03_transform_case.py** - Transform stage: converts JSON into structured data (<mark>**copy and edit**</mark>)
+- **src/nlp/stage04_load.py** - Load stage: writes output to persistent storage (no changes required)
+- **pyproject.toml** - Project metadata and dependencies (<mark>**update**</mark> authorship, links, and dependencies)
+- **zensical.toml** - Documentation configuration (<mark>**update**</mark> authorship and links)
 
 ## First: Follow These Instructions
 
@@ -63,14 +61,13 @@ Follow the [step-by-step workflow guide](https://denisecase.github.io/pro-analyt
 
 After running the script successfully, you will see:
 
-
 ```shell
 ========================
 Pipeline executed successfully!
 ========================
 ```
 
-And new files will appear:
+The following artifacts will be created:
 
 - project.log - confirming successful run
 - data/raw/case_raw.json - dump of the fetched JSON
@@ -141,8 +138,6 @@ git push -u origin main
 
 ## Example Artifact (Output)
 
-
-
 ```text
 START PIPELINE
 ROOT_PATH = .
@@ -184,11 +179,22 @@ Pipeline executed successfully!
 ========================
 ```
 
-
 ## Enhancements
 
 In production systems, validation is often automated using tools
-such as Great Expectations or Soda.
+such as **Great Expectations** or **Soda**.
 
-In this module, validation is implemented manually to develop a
-clear understanding of structure, assumptions, and data quality.
+Within the EVTL architecture, **VALIDATE** is a key stage
+with a clear source, process, and sink:
+
+- **Source**: JSON data extracted from the API
+- **Process**: checking structure, confirming assumptions, and identifying data quality issues
+- **Sink**: validated JSON passed to the TRANSFORM stage
+
+This stage ensures the data is in a **consistent and reliable form**
+before transformation begins,
+so later steps can run without errors or unexpected results.
+
+In this project, validation is implemented directly,
+so all checks are visible, repeatable, and easy to review as part
+of the pipeline.
