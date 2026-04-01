@@ -3,7 +3,7 @@
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
-> > Structured EVTL pipeline for reliable ingestion and transformation of JSON data from web APIs.
+> Structured EVTL pipeline for reliable ingestion and transformation of JSON data from web APIs.
 
 Web Mining and Applied NLP require reliable acquisition and processing of structured and semi-structured text data.
 This project implements a reproducible pipeline for working with JSON data from web APIs.
@@ -31,10 +31,6 @@ The workflow:
 - Persist results for downstream analysis
 
 Each stage is implemented as a modular component with explicit inputs and outputs.
-
-## Key Files
-
-You'll work with these files as you update authorship and experiment:
 
 ## Key Files
 
