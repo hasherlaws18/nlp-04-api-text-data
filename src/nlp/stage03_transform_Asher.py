@@ -68,7 +68,7 @@ def run_transform(
                 "user_id": record["userId"],
                 "post_id": record["id"],
                 "title": record["title"],
-                "body": record["body"],
+                "body": record["body"].replace("\n", " "),
             }
         )
 
