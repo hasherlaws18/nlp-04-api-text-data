@@ -79,6 +79,12 @@ Follow the guide for the **full instructions**.
 <details>
 <summary>Show command reference</summary>
 
+## Changes
+
+Updated validation to ensure each record has the required keys (userId, id, title, body).
+Added derived fields (title_length, body_length) to make the data easier to analyze.
+
+
 ### In a machine terminal (open in your `Repos` folder)
 
 After you get a copy of this repo in your own GitHub account,
