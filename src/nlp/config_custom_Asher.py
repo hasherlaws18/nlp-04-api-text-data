@@ -38,7 +38,7 @@ API_URL: str = "https://jsonplaceholder.typicode.com/comments"
 # TODO: In your custom app, change the header user-agent value
 # to something that represents your app or project.
 HTTP_REQUEST_HEADERS: dict[str, str] = {
-    "User-Agent": "nlp-module-4-case/1.0",
+    "User-Agent": "nlp-module-4-hasherlaws18/1.0",
     "Accept": "application/json",
 }
 
